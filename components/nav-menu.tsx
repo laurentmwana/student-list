@@ -103,7 +103,7 @@ export const NavMenu = ({ user }: Props) => {
           {user ? (
             <UserButton user={user} />
           ) : (
-            <ButtonLink href="/login" size="sm" className="inline-flex">
+            <ButtonLink href="/auth/sign-in" size="sm" className="inline-flex">
               Se connecter
             </ButtonLink>
           )}
