@@ -24,9 +24,16 @@ export const NavMenu = ({ user }: Props) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   const isMenuActive = (l: string) => {
-    return pathname.startsWith(l);
-  };
+    if (l === "/") {
+      return pathname === "/";
+    }
 
+    if (pathname === l) {
+      return true;
+    }
+
+    return pathname.startsWith(l + "/");
+  };
   const links = [
     { url: "/", label: "Accueil" },
     { url: "/about", label: "A propos" },
