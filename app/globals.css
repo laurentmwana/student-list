@@ -81,6 +81,8 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  --header-height: 80px;
 }
 
 .dark {
@@ -126,5 +128,44 @@
   }
   html {
     @apply font-sans;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  @apply mx-auto max-w-7xl p-4 lg:p-6;
+}
+
+@media screen and (max-width: 1200px) {
+  .table-responsive,
+  .table-responsive tbody,
+  .table-responsive tfoot,
+  .table-responsive tr,
+  .table-responsive th,
+  .table-responsive td {
+    @apply block;
+  }
+
+  .table-responsive tr {
+    @apply mb-[30px] border-b-0 bg-background;
+  }
+
+  .table-responsive tr:hover {
+    @apply bg-inherit;
+  }
+
+  .table-responsive thead {
+    display: none;
+  }
+
+  .table-responsive td {
+    @apply relative -mt-[1px] border-b border-muted-foreground/20 ps-[170px];
+  }
+
+  .table-responsive td::before {
+    @apply absolute top-0 bottom-0 left-0 flex w-[145px] items-center justify-center border-e border-muted-foreground/20 p-3 text-center content-[attr(data-label)];
   }
 }
